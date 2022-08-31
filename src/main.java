@@ -1,23 +1,19 @@
 public class main {
     public static void main(String[] args) {
-        int balance = 100;
-        int deposit = 100;
-        int bonus = 1;
+        int balance = 100; //остаток по счету
+        int deposit = 1100; //сумма пополнения
+        int bonus; //бонус за пополнение
+        int endBonus;
 
-        int bonusRUB = bonus * deposit / 100;
-
-        if (balance > 100) {
+        if (deposit > 1000) {
+            bonus = deposit / 100;
+            endBonus = balance + deposit + bonus;
         } else {
-            bonus = balance + deposit + bonusRUB;
+            bonus = 0;
+            endBonus = balance + deposit;
         }
 
-        if (balance < 100) {
-            balance = 0;
-        } else {
-            bonus = balance + deposit + bonusRUB;
-        }
-
-        System.out.println("Бонусные рубли:" + bonusRUB);
-        System.out.println("Итоговый баланс:" + bonus);
+        System.out.println("Бонусные рубли:" + bonus);
+        System.out.println("Итоговый баланс:" + endBonus);
     }
 }
